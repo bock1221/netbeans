@@ -38,6 +38,5 @@ public class FileDownLoad {
         System.out.println("this download will take "+hours+" hours \n"
                 +onlyMinutes+" minutes\n"
                 +operSeconds +" seconds ");
-        
-    }
+       }
 }
