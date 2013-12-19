@@ -23,8 +23,8 @@ public class FileDownLoad {
         final int minute=60;
         Scanner scanner =new Scanner (System.in);
         System.out.print("enter number of mb in file\n");
-        System.out.println("enter download speed MB/sec");
         double filesize =scanner.nextDouble();
+        System.out.println("enter download speed MB/sec");
         double speed = scanner.nextDouble();
         double totalseconds =filesize/speed;
         double minutes = totalseconds/60;
@@ -34,11 +34,10 @@ public class FileDownLoad {
         System.out.println(single);
         int hours  =single/(int)minute;
         int onlyMinutes = (int)minutes- (hours*minute); 
-        double calculateSeconds= (minutes-single)*minute;
-        int cSeconds =(int)calculateSeconds;
+        
         System.out.println("this download will take "+hours+" hours \n"
                 +onlyMinutes+" minutes\n"
-                +cSeconds +" seconds "+operSeconds);
+                +operSeconds +" seconds ");
         
     }
 }
