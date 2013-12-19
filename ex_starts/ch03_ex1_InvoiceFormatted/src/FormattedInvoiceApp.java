@@ -34,7 +34,10 @@ public class FormattedInvoiceApp
             double totalBeforeTax = subtotal - discountAmount;
             double salesTax = totalBeforeTax * SALES_TAX_PCT;
             double total = totalBeforeTax + salesTax;
-            
+            String checkmessage = "discountamount:"+discountAmount+"\n"
+                    +"totalBefore:"+totalBeforeTax+"\n"
+                    +"salestax;"+salesTax+"\n"
+                    +"total"+total;
             // get the currency and percent formatter objects
             NumberFormat currency = NumberFormat.getCurrencyInstance();
             NumberFormat percent = NumberFormat.getPercentInstance();
@@ -46,7 +49,7 @@ public class FormattedInvoiceApp
               + "Total before tax: " + currency.format(totalBeforeTax) + "\n"
               + "Sales tax:        " + currency.format(salesTax) + "\n"
               + "Invoice total:    " + currency.format(total) + "\n";
-            System.out.println(message);
+            System.out.println(checkmessage+"\n"+"final numbers"+"\n"+message);
 
             // see if the user wants to continue
             System.out.print("Continue? (y/n): ");
