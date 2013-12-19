@@ -28,6 +28,7 @@ public class FileDownLoad {
         double speed = scanner.nextDouble();
         double totalseconds =filesize/speed;
         double minutes = totalseconds/60;
+        int operSeconds=(int)totalseconds%60;
         int single =(int) minutes;
         System.out.println(minutes);
         System.out.println(single);
@@ -36,8 +37,8 @@ public class FileDownLoad {
         double calculateSeconds= (minutes-single)*minute;
         int cSeconds =(int)calculateSeconds;
         System.out.println("this download will take "+hours+" hours \n"
-                +single+" minutes\n"
-                +cSeconds +" seconds");
+                +onlyMinutes+" minutes\n"
+                +cSeconds +" seconds "+operSeconds);
         
     }
 }
