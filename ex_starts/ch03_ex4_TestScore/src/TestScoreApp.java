@@ -20,14 +20,18 @@ public class TestScoreApp
         Scanner sc = new Scanner(System.in);
 
         // get a series of test scores from the user
-        while (testScore != 999)
+        while (testScore != 998)
         {
             // get the input from the user
             System.out.print("Enter score: ");
             testScore = sc.nextInt();
+            if (sc.hasNextInt())
+                isvalid=true;
+            else 
+                isvalid == false;
 
             // accumulate score count and score total
-            if (testScore <= 100)
+            if (testScore <= 100&&isvalid==true)
             {
                 scoreCount = scoreCount + 1;
                 scoreTotal = scoreTotal + testScore;
