@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 import java.text.NumberFormat;
 
 public class FutureValueApp
@@ -7,15 +7,25 @@ public class FutureValueApp
     {
         Scanner sc = new Scanner(System.in);
         String choice = "y";
+        double monthlyInvestment=0;
+        double interestRate=0;
+        int years=0;
         while (!choice.equalsIgnoreCase("n"))
         {
+            try{
             // get the input from the user
             System.out.print("Enter monthly investment:   ");
-            double monthlyInvestment = sc.nextDouble();
+             monthlyInvestment = sc.nextDouble();
             System.out.print("Enter yearly interest rate: ");
-            double interestRate = sc.nextDouble();
+             interestRate = sc.nextDouble();
             System.out.print("Enter number of years:      ");
-            int years = sc.nextInt();
+             years = sc.nextInt();}
+            catch(InputMismatchException e)
+            {
+            sc.next();
+            System.out.println("invalid number try again\n");
+            continue;
+            }
 
             // convert yearly values to monthly values and initialize future value
             double monthlyInterestRate = interestRate/12/100;
