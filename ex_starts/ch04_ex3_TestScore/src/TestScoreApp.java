@@ -40,7 +40,7 @@ public class TestScoreApp
             // accumulate score count and score total
             if (testScore <= 100)
             {
-                scoreCount = scoreCount + 4;
+                scoreCount = scoreCount +1;
                 scoreTotal = scoreTotal + testScore;
             }
            else {
