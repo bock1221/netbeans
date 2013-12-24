@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.math.*;
 
 public class TestScoreApp
 {
@@ -13,6 +14,9 @@ public class TestScoreApp
         int scoreTotal = 0;
         int scoreCount = 0;
         int testScore = 0;
+        
+       // BigDecimal decimalscoreTotal=new BigDecimal(scoreTotal);
+        //BigDecimal decimalscoreCount=new BigDecimal(scoreCount);
         Scanner sc = new Scanner(System.in);
 
         // get a series of test scores from the user
@@ -33,11 +37,14 @@ public class TestScoreApp
         }
 
         // display the score count, score total, and average score
-        double averageScore = scoreTotal / scoreCount;
+        BigDecimal decimalscoreTotal=new BigDecimal(scoreTotal);
+        BigDecimal decimalscoreCount=new BigDecimal(scoreCount);
+     BigDecimal average =decimalscoreTotal.divide(decimalscoreCount, 1, RoundingMode.UP);
+        //double averageScore = scoreTotal / scoreCount;
         String message = "\n" +
                          "Score count:   " + scoreCount + "\n"
                        + "Score total:   " + scoreTotal + "\n"
-                       + "Average score: " + averageScore + "\n";
+                       + "Average score: " + average + "\n";
         System.out.println(message);
     }
 }

@@ -8,7 +8,7 @@ public class TestScoreApp
      public static void main(String[] args)
     {
         int i=0;
-        int minimum=0;
+        int minimum=10;
         int maximum=0;
         System.out.println("Please enter test scores that range from 0 to 100.");
         System.out.println("To end the program enter 999.");
