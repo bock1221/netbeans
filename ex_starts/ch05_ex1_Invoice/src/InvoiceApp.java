@@ -1,20 +1,76 @@
 import java.text.NumberFormat;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InvoiceApp
 {
+    private static double checkIfDouble(Scanner sc){
+        double subtotal=0.0;
+        boolean isValid=false;
+      while(isValid==false){
+        System.out.println("please enter a subtotal");
+      if(sc.hasNextDouble()){
+          subtotal= sc.nextDouble();
+         //if(subtotal>0 && subtotal<=100000){
+             sc.nextLine();
+         
+           }
+          else
+      {
+      System.out.println("you have enterd leters or symbols \n you need to enter  numbers only from 1-10000 ");
+      sc.nextLine();
+      continue;
+      }
+      if(subtotal>0&&subtotal<=1000)
+      isValid=true;
+      else
+          System.out.println("your entry is less than 0 or more than 1000 please reenter a valid number");
+                  
+      }return subtotal;
+    }
+    
+    private static String validateCustomerType(Scanner sc)
+    { boolean isValid=false;
+    String customerType="";
+        while(isValid==false){
+           System.out.print("Enter customer type (r/c): ");
+            customerType = sc.next();
+           // sc.nextLine();
+            if(customerType.equalsIgnoreCase("r")||customerType.equalsIgnoreCase("c"))
+            {
+            sc.nextLine();
+           isValid=true;}
+            else
+            {
+            System.out.println("you have entered a invalid choice" );
+            sc.nextLine();
+            
+            }
+        }return customerType;
+    }
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
         String choice = "y";
-        
+        double subtotal=0;
         while (!choice.equalsIgnoreCase("n"))
         {
-            // get the input from the user
-            System.out.print("Enter customer type (r/c): ");
-            String customerType = sc.next();
-            System.out.print("Enter subtotal:   ");
-            double subtotal = sc.nextDouble();
+           String customerType=validateCustomerType(sc);
+           
+          
+          
+               
+        
+            try{    
+             subtotal = checkIfDouble(sc);
+           
+            }
+            catch(InputMismatchException e)
+            {
+               sc.next();
+               System.out.println("number entered is invalid enter a number consisting only of digits ");
+            }
+           
             
             // get the discount percent
             double discountPercent = 0;
@@ -54,6 +110,7 @@ public class InvoiceApp
             // see if the user wants to continue
             System.out.print("Continue? (y/n): ");
             choice = sc.next();
+            sc.nextLine();
             System.out.println();
         }
     }

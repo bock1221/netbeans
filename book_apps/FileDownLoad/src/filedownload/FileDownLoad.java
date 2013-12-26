@@ -32,8 +32,9 @@ public class FileDownLoad {
         int single =(int) minutes;
         System.out.println(minutes);
         System.out.println(single);
-        int hours  =single/(int)minute;
-        int onlyMinutes = (int)minutes- (hours*minute); 
+        int hours  =single/minute;
+       int onlyMinutes=single%60;
+        // int onlyMinutes = (int)minutes- (hours*minute); 
         
         System.out.println("this download will take "+hours+" hours \n"
                 +onlyMinutes+" minutes\n"

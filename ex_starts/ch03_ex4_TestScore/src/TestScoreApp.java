@@ -20,7 +20,7 @@ public class TestScoreApp
         Scanner sc = new Scanner(System.in);
 
         // get a series of test scores from the user
-        while (testScore != 998)
+        while (testScore != 999)
         {
             // get the input from the user
             System.out.print("Enter score: ");
