@@ -29,7 +29,7 @@ public class checkingAccount extends Account {
         if(currentBalance>1000){
            transaction.setType("debit");
            transaction.setAmount(10);
-           transaction.setSource("Bank fee");
+           transaction.setSource("Bank fee");}
          return;  
      }
     
