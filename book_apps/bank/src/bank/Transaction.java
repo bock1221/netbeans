@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package bank;
 
 /**
@@ -9,15 +6,15 @@ package bank;
  * @author zvibock
  */
 public class Transaction {
-   private String  type;
+   private char  type;
    private double  amount;
    private String  source;
    
-   public void setType(String transactionType){
+   public void setType(char transactionType){
        this.type=transactionType;
    }  
 
-   public String getType(){
+   public char getType(){
        return type;
    }
    public void setAmount(double amount){

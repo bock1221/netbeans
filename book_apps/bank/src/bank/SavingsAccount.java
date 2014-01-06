@@ -13,6 +13,7 @@ public class SavingsAccount extends Account {
     protected Double interestRate;
 
     public void accountInfo() {
+        System.out.println("savings account");
         super.accountInfo();
         setInterestRate(.01);
         System.out.println("your monthley interest rate is: "+interestRate);
@@ -27,12 +28,13 @@ public class SavingsAccount extends Account {
     }
 
     @Override
-    public void endOfMonth(double currentBalance) {
+    public void endOfMonth() {
         double interestEarned = this.currentBalance * interestRate;
         Transaction transaction=new Transaction();
         transaction.setAmount(interestEarned);
-        transaction.setType("credit");
+        transaction.setType('c');
         transaction.setSource("interest");
+        transactions.add(transaction);
                 
     }
 }
